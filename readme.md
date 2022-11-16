@@ -2,7 +2,7 @@
 ## LOGGERS & GZIP
 Incorporar al proyecto de servidor de trabajo la compresión gzip.
 
-Verificar sobre la ruta /info con y sin compresión, la diferencia de cantidad de bytes devueltos en un caso y otro.
+Verificar sobre la ruta /info con y sin compresión, la diferencia de cantidad de bytes devueltos en un caso y otro.  ___--> (99.5 kB y 98.5 kB)___
 
 Luego implementar loggueo (con alguna librería vista en clase) que registre lo siguiente:
 - Ruta y método de todas las peticiones recibidas por el servidor (info)
@@ -11,8 +11,8 @@ Luego implementar loggueo (con alguna librería vista en clase) que registre lo 
 
 Considerar el siguiente criterio:
 - Loggear todos los niveles a consola (info, warning y error)
-- Registrar sólo los logs de warning a un archivo llamada warn.log
-- Enviar sólo los logs de error a un archivo llamada error.log
+- Registrar sólo los logs de warning a un archivo llamada [warn.log](https://github.com/MRCSSS/CH-Clase32-LOGGERS-GZIP-Performance_analisis/blob/main/logs/warn.log)
+- Enviar sólo los logs de error a un archivo llamada [error.log](https://github.com/MRCSSS/CH-Clase32-LOGGERS-GZIP-Performance_analisis/blob/main/logs/error.log)
 ## ANÁLISIS COMPLETO DE PERFORMANCE
 Luego, realizar el análisis completo de performance del servidor con el que venimos trabajando.
 
