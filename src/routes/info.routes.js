@@ -36,7 +36,6 @@ info.get('/', compression(), (req, res) => {
         directory: process.cwd(),
         memUsage: process.memoryUsage(),
     };
-
     // console.log("Information data: ",infoData);
 
     res.render('partials/info-content', infoData );
