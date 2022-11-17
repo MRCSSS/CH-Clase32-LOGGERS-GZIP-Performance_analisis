@@ -3,7 +3,6 @@ import express from 'express';
 import os from 'os';
 import compression from 'compression';
 import {logger} from '../utils/logger.config.js';
-// import info from './info.routes.js';
 
 /* ====================== INSTANCIA DE ROUTER ======================= */
 const info = express.Router();
@@ -26,15 +25,21 @@ info.get('/', compression(), (req, res) => {
             argsData.push({value: args[i]});
         }
     }
-
-    res.render('partials/info-content', { 
+    let infoData = {
         layout: 'info',
+        args: argsData,
+        path: process.execPath,
+        os: process.platform,
         cores: os.cpus().length, 
-        info: process, 
-        params: argsData,
+        pid: process.pid,
+        nodeVersion: process.version,        
+        directory: process.cwd(),
         memUsage: process.memoryUsage(),
-        directory: process.cwd()
-    });
+    };
+
+    // console.log("Information data: ",infoData);
+
+    res.render('partials/info-content', infoData );
 });
 
 

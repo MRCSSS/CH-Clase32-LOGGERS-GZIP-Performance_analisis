@@ -6,13 +6,13 @@ import os from 'os';
 import {logger} from './src/utils/logger.config.js';
 
 /* ========================== INSTANCIANDO ========================== */
-const options = {alias: {serverMode: 's', modo: 'm', p: 'port', d: 'debug'}, default: {s: 'FORK', p: 8080, m: 'prod', debug: false}};
+// const options = {alias: {serverMode: 's', modo: 'm', p: 'port', d: 'debug'}, default: {s: 'FORK', p: 8080, m: 'prod', debug: false}};
+const options = {alias: {serverMode: 's', p: 'port'}, default: {s: 'FORK', p: 8080}};
 const args =minimist(process.argv.slice(2), options);
 const CPU_CORES = os.cpus().length;
 const serverMode = args.serverMode.toUpperCase();
 
 /* ============================ SERVIDOR ============================ */
-
 if (serverMode === 'CLUSTER' ) {
     if (cluster.isPrimary) {
         logger.info(`Cantidad de cores: ${CPU_CORES}`);
@@ -37,4 +37,3 @@ if (serverMode === 'CLUSTER' ) {
     });
     server.on('error', err => { logger.error(`Server error: ${err}`); });
 }
-
